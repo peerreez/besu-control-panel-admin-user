@@ -1,75 +1,73 @@
 # Besu Control Panel
 
-Panel de administración para nodos Besu y gestión de cuentas en una red Ethereum privada.
+Administration panel for Besu nodes and account management on a private Ethereum network.
 
-## Características
-- Login con roles: `admin` y `user`.
-- Panel de administración para gestionar contenedores de nodos (crear, iniciar, detener, eliminar, ver logs, crear bootnode).
-- Consulta de saldo de cualquier cuenta (admin).
-- Panel de usuario para transferencias de ETH usando MetaMask.
-- Interfaz moderna en modo oscuro con Tailwind CSS.
+## Features
+- Login with roles: `admin` and `user`.
+- Administration panel for managing node containers (create, start, stop, delete, view logs, create bootnode).
+- Check the balance of any account (admin).
+- User panel for ETH transfers using MetaMask.
+- Modern dark-mode interface with Tailwind CSS.
 
-## Requisitos
+## Requirements
 - Node.js >= 18
-- Yarn o npm
-- Docker (para la gestión de contenedores)
-- MetaMask instalado en el navegador
-- Red Ethereum local corriendo en `http://localhost:8888` (o la que uses)
+- Yarn or npm
+- Docker (for container management)
+- MetaMask installed in the browser
+- Local Ethereum network running at `http://localhost:8888` (or whatever you use)
 
-## Instalación
+## Installation
 
 ```bash
 cd besu-control-panel
-# Instala dependencias
+# Install dependencies
 npm install
-# o
+# or
 yarn install
 ```
 
-## Comandos de desarrollo
+## Development Commands
 
 ```bash
-# Inicia el servidor de desarrollo
+# Start the development server
 npm run dev
-# o
+# or
 yarn dev
 ```
 
-Accede a la app en [http://localhost:3000](http://localhost:3000)
+Access the app at [http://localhost:3000](http://localhost:3000)
 
-## Comandos de producción
+## Production Commands
 
 ```bash
-# Compila la app
+# Build the app
 npm run build
-# o
+# or
 yarn build
 
-# Inicia en modo producción
+# Start in production mode
 npm start
-# o
+# or
 yarn start
 ```
 
-## Notas de uso
+## Notes Usage
 - **Login:**
-  - Usuario admin: `admin` / `admin`
-  - Usuario normal: `user` / `user`
+- Admin user: `admin` / `admin`
+- Regular user: `user` / `user`
 - **MetaMask:**
-  - Debes conectar MetaMask a tu red local (por ejemplo, `http://localhost:8888`).
-  - El usuario puede transferir ETH desde su cuenta conectada.
-  - El admin puede consultar el saldo de cualquier dirección.
-- **Contenedores:**
-  - El panel permite crear, iniciar, detener y eliminar nodos.
-  - El botón "Crear Bootnode" solo está habilitado si el contenedor `besu-network-bootnode` no existe.
-  - Para crear el bootnode, debe existir un endpoint `/api/nodes/create-bootnode` que ejecute el script `nodo.sh` desde el mismo directorio que `nodo_create.sh`.
+- You must connect MetaMask to your local network (e.g., `http://localhost:8888`).
+- The user can transfer ETH from their connected account.
+- The admin can check the balance of any address.
+- **Containers:**
+- The panel allows you to create, start, stop, and delete nodes.
+- The "Create Bootnode" button is only enabled if the `besu-network-bootnode` container does not exist.
+- To create the bootnode, a `/api/nodes/create-bootnode` endpoint must exist that runs the `nodo.sh` script from the same directory as `nodo_create.sh`.
 
-## Estructura principal
-- `/src/app/admin` — Panel de administración
-- `/src/app/dashboard` — Panel de usuario
-- `/src/components` — Componentes reutilizables
-- `/src/context` — Contexto de autenticación
+## Main Structure
+- `/src/app/admin` — Administration Panel
+- `/src/app/dashboard` — User Panel
+- `/src/components` — Reusable Components
+- `/src/context` — Authentication Context
 
 ---
-
-¿Dudas o sugerencias? ¡Contribuciones y feedback son bienvenidos!
